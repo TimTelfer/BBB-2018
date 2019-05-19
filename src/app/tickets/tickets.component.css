@@ -1,0 +1,9 @@
+#ticket-frame {
+    width: 100%;
+    height: auto;
+}
+
+.fallback-text {
+    color: yellow;
+    text-align: center;
+}

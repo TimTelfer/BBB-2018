@@ -1,0 +1,32 @@
+@font-face {
+    font-family: digitalFont;
+    src: url('../../assets/digital-7.ttf');
+}
+
+.counter {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.number {
+    font-family: digitalFont, serif;
+    background-color: #222222;
+    color: #66FF66;
+    font-size: 30px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.following-text {
+    color: white;
+    font-family: arial, sans-serif;
+}
+
+h4 {
+    color: white;
+    font-family: arial, sans-serif;
+}
+
+.gotcha {
+    cursor:url('../../assets/cursor.png'), auto;
+}

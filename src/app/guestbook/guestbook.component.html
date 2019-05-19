@@ -1,0 +1,108 @@
+<div class="row guestbook">
+    <div class="offset-lg-2 col-lg-8 offset-xl-3 col-xl-6 offset-0 col-12">
+
+        <div class="container">
+            <form [formGroup]="guestbookForm" (ngSubmit)="signGuestbook()">
+
+                <div class="row title">
+                    <div class="col-12"><h3>Sign Our Guestbook</h3></div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="name" class="col-12 col-sm-2 col-form-label">Name</label>
+
+                    <div class="col-12 col-sm-10">
+                        <input class="form-control" formControlName="name" type="text" id="name"
+                               required maxlength="50">
+                    </div>
+
+                    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+                         class="col-12 col-sm-10 offset-sm-2 warning">
+
+                        <div *ngIf="name?.errors['required']">
+                            Name is required.
+                        </div>
+                        <div *ngIf="name?.errors['max-length']">
+                            Must be less than 50 chars
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="message" class="col-12 col-sm-2 col-form-label">Message</label>
+
+                    <div class="col-12 col-sm-10">
+                        <textarea class="form-control" formControlName="message" id="message" name="message" rows="5"
+                                  maxlength="500"></textarea>
+                    </div>
+
+                    <div *ngIf="message?.invalid && (message?.dirty || message?.touched)"
+                         class="col-12 col-sm-10 offset-sm-2 warning">
+
+                        <div *ngIf="message?.errors['max-length']">
+                            Must be less than 500 chars
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="giphyUrl" class="col-12 col-sm-2 col-form-label">Giphy</label>
+
+                    <div class="col-12 col-sm-10">
+                        <input class="form-control" formControlName="giphyUrl" type="text" id="giphyUrl" name="giphyUrl"
+                            pattern="^https:\/\/media\.giphy\.com\/media\/[a-zA-Z0-9]{1,30}\/giphy\.gif\s*$">
+                    </div>
+
+                    <div *ngIf="giphyUrl?.invalid && (giphyUrl?.dirty || giphyUrl?.touched)"
+                         class="col-12 col-sm-10 offset-sm-2 warning">
+
+                        <div *ngIf="giphyUrl?.errors['pattern']">
+                            Must look like https://media.giphy.com/media/26FeYG5rppid49Rwk/giphy.gif
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="offset-0 offset-sm-2 col-10">
+                        <button type="submit" class="btn btn-success"
+                                [disabled]="guestbookForm.invalid">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="container message-card">
+
+            <div class="row jumbotron" *ngFor="let message of messages">
+
+                <div class="col-12 col-sm-4">
+
+                    <div class="row">
+                        <b>{{message.name}}</b>
+                    </div>
+
+                    <div class="row date">
+                        {{message.whenDate | date:'yyyy-MM-dd HH:mm:ss a'}}
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-sm-8">
+                    <div class="row">
+                        {{message.message}}
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-8 offset-sm-4" *ngIf="message.giphyId" >
+
+                    <img class="img-fluid giphy float-left" src="https://media.giphy.com/media/{{message.giphyId}}/giphy.gif">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

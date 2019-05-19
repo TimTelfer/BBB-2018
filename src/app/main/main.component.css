@@ -1,0 +1,22 @@
+.video-column {
+    width:100%;
+    float:left;
+    text-align:center;
+}
+
+.video {
+    display:block;
+    margin:auto;
+}
+
+.video-row {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+@media all and (max-width: 450px) {
+    .video-row {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}

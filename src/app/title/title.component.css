@@ -1,0 +1,50 @@
+.title-image {
+    height: 40px;
+    width: 100%;
+}
+
+@font-face {
+    font-family: arcadeFont;
+    src: url('../../assets/ChessType.ttf');
+}
+
+.title-text {
+    color: yellow;
+    font-family: arcadeFont, serif;
+    text-align: center;
+    font-size: 50px;
+    display:inline-block;
+    -webkit-transform:scale(1.4,1); /* Safari and Chrome */
+    -moz-transform:scale(1.4,1); /* Firefox */
+    -ms-transform:scale(1.4,1); /* IE 9 */
+    -o-transform:scale(1.4,1); /* Opera */
+    transform:scale(1.4,1); /* W3C */
+}
+
+@media all and (max-width: 770px) {
+    .title-text {
+        font-size: 40px;
+    }
+}
+
+@media all and (max-width: 590px) {
+    .title-text {
+        font-size: 35px;
+    }
+}
+
+@media all and (max-width: 520px) {
+    .title-text {
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 450px) {
+    .title-text {
+        font-size: 25px;
+    }
+}
+
+.title-column {
+    text-align: center;
+}

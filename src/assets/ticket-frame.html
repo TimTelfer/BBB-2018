@@ -1,0 +1,57 @@
+<html>
+<head>
+    <style>
+        .loader-container {
+            text-align: center;
+        }
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+            margin-top: 100px;
+            align-content: center;
+            display: inline-block;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+
+        var spinFor = setInterval(function() {
+            clearInterval(spinFor);
+            document.getElementById('loader-container').style.display = 'none';
+            document.getElementById('tickets-widget').style.visibility = 'visible';
+        }, 2000);
+    </script>
+</head>
+<body>
+    <div class="loader-container" id="loader-container">
+        <div class="loader"></div>
+    </div>
+    <div class="tt-widget" style="visibility: hidden" id="tickets-widget">
+        <div class="tt-widget-fallback">
+            <p>
+                <a href="https://www.tickettailor.com/new-order/159928/7d9a/ref/website_widget/" target="_blank">Click here to buy tickets</a>
+                <br />
+                <small>
+                    <a href="http://www.tickettailor.com?rf=wdg" class="tt-widget-powered">Sell tickets online with Ticket Tailor</a>
+                </small>
+            </p>
+        </div>
+        <script src="https://dc161a0a89fedd6639c9-03787a0970cd749432e2a6d3b34c55df.ssl.cf3.rackcdn.com/tt-widget.js" data-url="https://www.tickettailor.com/new-order/159928/7d9a/ref/website_widget/" data-type="inline" data-inline-minimal="false" data-inline-show-logo="true" data-inline-bg-fill="true"></script>
+    </div>
+</body>
+</html>

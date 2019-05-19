@@ -1,0 +1,40 @@
+.guestbook {
+    color: yellow;
+    margin-top: 20px;
+}
+
+.title {
+    text-align: center;
+    animation: blinker 1s linear infinite;
+    font-family: arial, sans-serif;
+}
+
+.message-card {
+    color: black;
+}
+
+.jumbotron {
+    padding: 10px;
+}
+
+.date {
+    font-size: 10px;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.col-form-label {
+    font-family: arial, sans-serif;
+}
+
+.giphy {
+    margin-left: -15px;
+}
+
+.warning {
+    word-wrap: break-word;
+}
